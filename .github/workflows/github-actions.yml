@@ -1,4 +1,7 @@
 name: GitHub Actions for Responder
+permissions:
+  id-token: write
+  contents: read
 on: 
   push:
     # branches: 
@@ -30,9 +33,6 @@ jobs:
         
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
-        permissions:
-          id-token: write
-          contents: write
         with:
           role-to-assume: arn:aws:iam::698914002124:role/my-github-actions-role
           aws-region: us-east-1
