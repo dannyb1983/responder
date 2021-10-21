@@ -27,8 +27,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+        
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
+        permissions:
+          id-token: write
+          contents: write
         with:
           role-to-assume: arn:aws:iam::698914002124:role/my-github-actions-role
           aws-region: us-east-1
