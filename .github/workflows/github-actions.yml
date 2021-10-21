@@ -27,6 +27,11 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::123456789100:role/my-github-actions-role
+          aws-region: us-east-1
       # install aws cli
       # configure cli
       # install serverless globally
