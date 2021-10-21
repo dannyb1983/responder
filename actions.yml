@@ -57,7 +57,7 @@ flows:
     provider: AWS
     enabled: true
     parallel:
-      - command: SendDiscord
+      - command: SendSlack
         message:
           header: "Root has logged in"
           values:
