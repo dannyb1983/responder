@@ -1,4 +1,4 @@
-### <img src="assets/TEXTBG_RED.jpg" width="250" height="250">
+### <img src="assets/CHAT_BUBBLE.png" width="250" height="250">
 
 # Responder
 
