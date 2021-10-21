@@ -27,8 +27,23 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+      # install aws cli
+      - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+             unzip awscliv2.zip
+             sudo ./aws/install
+      # configure cli
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      # install serverless globally
+      - run: npm install serverless -g
+      # configure serverless
+
       - run: npm install
-      - run: npm run deploy
+      # - run: npm run deploy
+      - run: printenv
 
 
   # on:
