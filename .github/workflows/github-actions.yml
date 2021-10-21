@@ -31,7 +31,7 @@ jobs:
       # configure cli
       # install serverless globally
       # configure serverless
-
+      - run: export AWS_REGION=us-east-1
       - run: npm install
       - run: npm run deploy
 
